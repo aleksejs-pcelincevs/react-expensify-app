@@ -1,3 +1,1 @@
 runtime: nodejs10
-skip_files:
-- src/
