@@ -1,4 +1,13 @@
 steps:
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=env_variables.yaml.enc
+  - --plaintext-file=env_variables.yaml
+  - --location=global
+  - --keyring=expensify-app
+  - --key=cloudbuild-env
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['install', '--production']
 - name: 'gcr.io/cloud-builders/yarn'
