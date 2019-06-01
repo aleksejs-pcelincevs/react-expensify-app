@@ -3,8 +3,8 @@ steps:
   args:
   - kms
   - decrypt
-  - --ciphertext-file=env_variables.yaml.enc
-  - --plaintext-file=env_variables.yaml
+  - --ciphertext-file=.env.enc
+  - --plaintext-file=.env
   - --location=global
   - --keyring=expensify-app
   - --key=cloudbuild-env
@@ -12,7 +12,7 @@ steps:
   args: ['install', '--production']
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['run', 'build:prod']
-  env: 
+  env:
   - 'NODE_ENV=production'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy']
