@@ -18,3 +18,14 @@ node_modules/
 
 # Source code
 src/
+
+
+
+# Configuration for CloudBuild CI
+
+# Ignore all
+/*
+
+# Allow only production files
+!public/
+!server/
