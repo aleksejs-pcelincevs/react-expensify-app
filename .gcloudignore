@@ -29,3 +29,5 @@ src/
 # Allow only production files
 !public/
 !server/
+!app.yaml
+!package.json
